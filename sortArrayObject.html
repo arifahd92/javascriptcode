@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <input  type="password" name="" id="pass" placeholder="typepassword"> -->
+    <br />
+    <!-- <input type="datetime" name="" id="mydate"> -->
+    <!-- <input type="date" name="" id="mydate"> -->
+    <input type="datetime-local" name="" id="mydate" />
+    <br />
+    <h1 onclick="passwordd()">pasword</h1>
+    <h1 onclick="grt()">click me</h1>
+    <script>
+      let arr = [1, 2, 5, 3, 4, 7, 0]; //array
+      let obj = [
+        //it is also an array but each elements are object so we call it array of object all the proprty of ayyar will hold good
+        {
+          name: "shama",
+          age: 24,
+        },
+        {
+          name: "taslim",
+          age: 26,
+        },
+        {
+          name: "arif",
+          age: 23,
+        },
+        {
+          name: "sima",
+          age: 18,
+        },
+      ];
+      let ress = obj.sort((a, b) => a.age - b.age); //seema to shama
+      //   console.log(ress)
+
+      //////////////////
+      let res2 = arr.sort((a, b) => a - b);
+      //   console.log(res2)//0123457
+      //////////////////////////////
+      obj.sort((a, b) => {
+        if (a.name < b.name) return -1;
+        if (a.name > b.name) return 1;
+        if (a.name == b.name) return 0;
+      });
+      //   console.log(obj)//sorted in string form
+
+      let arrayofobj = [
+        {
+          name: "Shama",
+          age: 24,
+        },
+        {
+          name: "Taslim",
+          age: 26,
+        },
+        {
+          name: "arif",
+          age: 23,
+        },
+        {
+          name: "sima",
+          age: 18,
+        },
+      ];
+      let res = arrayofobj.sort((a, b) => {
+        let fa = a.name.toLowerCase();
+        let fb = b.name.toLowerCase();
+        if (fa < fb) return -1;
+        if (fa > fb) return 1;
+        if (fa == fb) return 0;
+      });
+      // console.log(res)
+
+      let newres = res.filter((e) => {
+        return e.age > 23;
+      });
+      // console.log(newres)//shama taslim
+
+      // let date = new Date()
+      // console.log(date)//Thu Dec 22 2022 22:46:39 GMT+0530 (India Standard Time)
+      // console.log(date.toLocaleDateString())//12/22/2022
+      // console.log(date.toDateString())//Thu Dec 22 2022
+      // console.log(date.toLocaleDateString()==date.toDateString())//false
+      // console.log(date.toLocaleDateString().getTime()==date.toDateString().getTime())//error
+      // console.log(typeof(date.toLocaleDateString()))//string
+      // console.log(typeof(date.toDateString()))//string
+      // console.log("a"+"b")//ab
+      // console.log(1+1)//2
+      // console.log(1+-1)//0
+      let mydate = document.getElementById("mydate");
+      function grt() {
+        let c = mydate.value;
+        console.log(c);
+        let date = new Date(c);
+        console.log(date.getTime());
+        console.log(typeof c); //string
+      }
+      function passwordd() {
+        console.log("i got clicked");
+        console.log(pass.type); //password
+        pass.type = Text;
+      }
+    </script>
+  </body>
+</html>

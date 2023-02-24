@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .cont {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+        border: 3px solid red;
+      }
+      .left {
+        height: 100vh;
+        width: 50vw;
+        background-color: aqua;
+        font-size: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .mid {
+        height: 100vh;
+        width: 10px;
+        background-color: brown;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .right {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 50vw;
+        background-color: aqua;
+      }
+      .call,
+      .apply,
+      .bind {
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        font-size: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cont">
+      <div class="left">javascript</div>
+      <div class="mid"></div>
+      <div class="right">
+        <div class="rightcont">
+          <div class="call">call()</div>
+
+          <div class="apply">apply()</div>
+          <div class="bind">bind()</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

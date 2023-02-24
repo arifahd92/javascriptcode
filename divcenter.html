@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex</title>
+</head>
+<style>
+    body{
+        height: 100vh;
+       display: flex; 
+       justify-content: center;
+       align-items: center;
+       background-color: black;
+    }
+    .container{
+        background-color: aqua;
+        border: 3px solid red;
+        height:60vh;
+        width: 120vh;
+        /* display: inline-flex;    inline flex me container ki height with child pe depend karta hai aur itmet sikudta bhi nhi*/
+        display: flex;
+        /* flex-wrap: wrap; */
+        /* flex-direction: column; */
+      
+       justify-content: center; /* x axis ko center center ki jagah space-evenly bhi de sakte hai */
+       align-items: center; /* y axis ko center */
+
+
+          /*ye har box ko center kar diya*  */
+
+    }
+    
+    .item{
+        display: flex;
+        justify-content: center;/*x axis me center(left righ) par up down me center nhi*/
+         align-items: center; /*y axis(up down) ko center par right left me nhi */
+     /* text-align: center center; /* srf x axis me capable*/
+
+        height: 150px;
+        width: 150px
+        /* ye text ko center kar diya  */
+       }
+    @media screen and (max-width:700px) {
+        .container{
+            flex-direction: column;  
+        }    
+    }
+</style>
+<body>
+    <div class="container">
+        <div style="background-color:rgb(90, 44, 139) ;" class="item">item1</div>
+
+        <div style="background-color:rgb(224, 197, 20) ;" class="item">item2</div>
+        <div style="background-color:red ;" class="item">item3</div>
+    
+        <div style="background-color:rgb(30, 236, 44) ;" class="item">item4</div>
+        <div style="background-color:rgb(125, 115, 115) ;" class="item">item5</div>
+        <div style="background-color:rgba(9, 0, 0, 0.256) ;" class="item">item6</div>
+        <div style="background-color:rgb(75, 81, 160) ;" class="item">item7</div>
+        <div style="background-color:rgb(97, 13, 243) ;" class="item">item8</div>
+        <div style="background-color:red ;" class="item">item9</div>
+    </div>
+</body>
+</html>
