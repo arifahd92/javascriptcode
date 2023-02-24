@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KSG SCHOOL</title>
+  </head>
+  <style>
+        body {
+          margin: 0px;
+          padding: opx;
+
+          background-color: rgb(146, 159, 159);
+        }
+        .cont {
+          display: flex;
+          justify-content: space-evenly;
+          text-align: center;
+          align-items: center;
+          /* flex-wrap: wrap; */
+        }
+        .contwrap {
+          display: flex;
+          justify-content: space-evenly;
+          text-align: center;
+          align-items: center;
+          flex-wrap: wrap;
+        }
+        #admission {
+          background-color: rgb(119, 119, 241);
+        }
+        .admission {
+          position: relative;
+          height: fit-content;
+          background-color: rgb(70, 70, 176);
+          width: 100%;
+          height: 55px;
+          left: 50%;
+          top: auto;
+          animation: admission 10s infinite;
+          animation-direction: alternate;
+          animation-timing-function: ease-out;
+          color: red;
+        }
+        @keyframes admission {
+          0% {
+            left: 50%;
+          }
+          50% {
+            left: -50%;
+          }
+          100% {
+            left: 50%;
+          }
+        }
+        .mpic {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 250px;
+          width: 100vw;
+        }
+        h2 {
+          height: 150px;
+          width: 100vw;
+          font-size: 20px;
+          background-color: cornflowerblue;
+        }
+        .foot {
+          height: fit-content;
+          text-align: center;
+          width: 100vw;
+          height: 70px;
+          box-sizing: border-box;
+        }
+        .call,
+        .wtsp {
+          height: 70px;
+          width: 70px;
+          margin-top: 10px;
+          margin-bottom: 10px;
+          border-radius: 50%;
+        }
+        .note {
+          height: fit-content;
+          background-color: red;
+          width: 100vw;
+          padding-top: 10px;
+          padding-bottom: 10px;
+        }
+        .admission,
+        .foot,
+        .note,
+        .wlcm {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          /* background-color: blue; */
+          /* color: blue; */
+        }
+        .foot {
+          background-color: burlywood;
+          color: blue;
+        }
+        .upiimg {
+          width: fit-content;
+        }
+        .logo1 {
+          height: 100px;
+          width: 75vw;
+        }
+        .logo2 {
+          height: 100px;
+          width: 25vw;
+        }
+        .contnav {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          height: 60px;
+        }
+        .nav {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .qari {
+          border: 5px solid grey;
+          width: 100%;
+          /* display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap; */
+          height: 310px;
+          /* overflow-y: scroll;
+          overflow-x: hidden; */
+        }
+        #qari {
+          border: 0px solid rgb(168, 12, 12);
+          border-radius: 50%;
+          height: 150px;
+          width: 150px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .innerflex {
+          display: flex;
+          justify-content: center;
+          align-items: end;
+        }
+        .contact {
+          background-color: rgb(148, 113, 229);
+          width: 100px;
+          border: 2px solid rgb(68, 65, 65);
+        }
+        video {
+          height: 500px;
+          width: fit-content;
+        }
+        h3 {
+          padding-left: 10px;
+        }
+        .para {
+          padding-top: 10px;
+          padding-bottom: 10px;
+          padding-left: 5px;
+          padding-right: 5px;
+        }
+        /* #profilecontainer{
+    (360deg); */
+          animation: admissionoffer 3s infinite;
+          animation-direction: alternate;
+          animation-timing-function: ease;
+        }
+        @keyframes admissionoffer {
+          from {
+            transform: rotateY(-40deg);
+          }
+          to {
+            transform: rotateY(50deg);
+          }
+        }
+        @media screen and (max-width: 250px) {
+          .qari {
+            border: 5px solid grey;
+            width: 100%;
+            /* display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap; */
+            height: 310px;
+            overflow-y: scroll;
+            overflow-x: hidden;
+          }
+        }
+  </style>
+  <body>
+    <div class="contnav">
+      <!-- <div class="nav"> -->
+      <span style="padding-left: 5px">home</span>
+      <!-- <span onclick="contact()">contact</span> -->
+      <span> <a href="#contact">contact</a></span>
+
+      <span>important link</span>
+      <span style="padding-right: 5px">Reg.No.-118</span>
+    </div>
+    <div class="cont">
+      <img
+        class="logo1"
+        src="WhatsApp Image 2023-02-14 at 23.58.21.jpeg"
+        alt=""
+        srcset=""
+      />
+      <img
+        class="logo2"
+        src="WhatsApp Image 2023-02-15 at 12.09.28.jpeg"
+        alt=""
+        srcset=""
+      />
+    </div>
+    <span class="contwrap">
+      <span class="para" style="background-color: burlywood">
+        K S G ARABIC SCHOOL formerly known as (MADARSA KHALEELIYA SABIRIYA
+        GAUSUL ULOOM) It was founded by founder Maulana Qiyam Razvi in 2006 in
+        village Sihoriya, Qari Ali Akbar khan joind this in 2007 and together
+        they took forward it, if you want contribute you can contribute using
+        given below upi-id/bar code
+      </span>
+    </span>
+    <span class="cont" id="admission">
+      <div class="admission">Admission open for session 2023-24</div>
+    </span>
+    <span class="cont">
+      <div class="admissionoffer">
+        Admission is free for the first 100 students
+      </div>
+    </span>
+    <span class="cont">
+      <a
+        href="https://drive.google.com/file/d/1OLahtOOiF-ZYDnYyUK_NCl9nYMVrkhmJ/view?usp=drivesdk"
+        >download admission form</a
+      >
+    </span>
+    <div class="cont">
+      <img class="mpic" src="madarsafront.jpg" alt="" srcset="" />
+    </div>
+    <div class="cont" id="profilecontainer">
+      <div class="qari">
+        <div class="innerflex">
+          <img
+            class="mpic"
+            id="qari"
+            src="WhatsApp Image 2023-02-15 at 09.07.59.jpeg"
+            alt=""
+            srcset=""
+          />
+        </div>
+
+        <div class="profile">
+          <div>Maulana Qyam Razvi noori</div>
+          <div>Founder K S G Arabic School</div>
+          <span class="contact" onclick="callqiyam()">Call</span>
+          <a
+            class="contact"
+            href="https://api.whatsapp.com/send?phone=919935355836&text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%DB%8C%DA%A9%D9%85%20%D9%88%D8%B1%D8%AD%D9%85%DB%83%20%D8%A7%D9%84%D9%84%DB%81%20%D9%88%D8%A8%D8%B1%DA%A9%D8%A7%D8%AA%DB%81"
+            >Message</a
+          >
+        </div>
+      </div>
+      <div class="qari">
+        <div class="innerflex">
+          <img
+            class="mpic"
+            id="qari"
+            src="WhatsApp Image 2023-02-14 at 23.25.13 (1).jpeg"
+            alt=""
+            srcset=""
+          />
+        </div>
+        <div class="profile">
+          <div>Qari Ali Akbar Khan</div>
+          <div>Co-founder & Principal K S G Arabic School</div>
+          <span class="contact" onclick="callakbar()">Call</span>
+          <a
+            class="contact"
+            href="https://api.whatsapp.com/send?phone=919795881084&text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%DB%8C%DA%A9%D9%85%20%D9%88%D8%B1%D8%AD%D9%85%DB%83%20%D8%A7%D9%84%D9%84%DB%81%20%D9%88%D8%A8%D8%B1%DA%A9%D8%A7%D8%AA%DB%81"
+            >Message</a
+          >
+        </div>
+      </div>
+    </div>
+    <div class="contlist">
+      <h3 style="color: blue">Our feature:</h3>
+    </div>
+    <ol style="background-color: burlywood" class="para">
+      <li>Certified Teachers</li>
+      <li>Interractive Atmosphere</li>
+      <li>Quality Education</li>
+      <li>Teaching through latest audio visual technique</li>
+      <li>Providing basic computer knowledge of Tution</li>
+      <li>A school without need of tution</li>
+    </ol>
+    <div class="contlist">
+      <h3 style="color: blue">
+        Teaching is our passion and providing quality education is our priority:
+      </h3>
+    </div>
+    <ol style="background-color: burlywood" class="para">
+      <li>अनुभवी अध्यापक व अध्यापिका द्वारा शिक्षा प्रदान करना।</li>
+      <li>छात्र/छात्राओं के बैठने की उचित व्यवस्था</li>
+      <li>प्रोजेक्टर माध्यम द्वारा बच्चों के शिक्षा की उचित व्यवस्था।</li>
+      <li>छात्र/छात्राओं के लिये शुध्द पेय जल एवं शौचालय का व्यवस्था।</li>
+      <li>प्रत्येक कमरे में बिजली व पंखा की उचित व्यवस्था।</li>
+      <li>छात्रों हेतु वाहन की सुविधा उपलब्ध।</li>
+      <li>अतिरिक्त कक्षा व खेल-कूद की व्यवस्था।</li>
+      <li>गरीब छात्र/छात्राओं को निशुल्क शिक्षा की व्यवस्था।</li>
+      <li>अरवी और दिनीयत की विशेष व्यवस्था।</li>
+    </ol>
+    <div class="cont">
+      <video width="320" controls>
+        <source src="video_20230215_095611.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div class="cont">
+      <video width="320" controls>
+        <source src="VID-20230217-WA0002.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div class="cont">
+      <div class="foot">Donate using bar code:👇</div>
+    </div>
+    <div class="cont">
+      <img
+        class="upiimg"
+        src="WhatsApp Image 2023-02-14 at 20.49.40.jpeg"
+        alt="qr"
+        srcset=""
+      />
+    </div>
+    <div class="cont">
+      <div class="foot">UPI ID: akaraliksg@ybl</div>
+    </div>
+    <div class="cont">
+      <div class="note">
+        Note: Ensure that registered name is:"Mohd Ali Akbar Khan So Md Yosuf
+        Khan"
+      </div>
+    </div>
+
+    <!-- </div> -->
+    <div class="cont">
+      <div class="foot" id="contact">Contact:👇</div>
+    </div>
+    <div class="cont">
+      <a
+        href="https://api.whatsapp.com/send?phone=919795881084&text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%DB%8C%DA%A9%D9%85%20%D9%88%D8%B1%D8%AD%D9%85%DB%83%20%D8%A7%D9%84%D9%84%DB%81%20%D9%88%D8%A8%D8%B1%DA%A9%D8%A7%D8%AA%DB%81"
+        ><img
+          class="wtsp"
+          src="WhatsApp Image 2023-02-14 at 20.26.31.jpeg"
+          alt="whatsapp"
+          srcset=""
+      /></a>
+      <img
+        onclick="callakbar()"
+        class="call"
+        id="call"
+        src="WhatsApp Image 2023-02-14 at 20.23.55.jpeg"
+        alt=""
+      />
+    </div>
+    <script>
+      function callakbar() {
+        if (navigator.vibrate) {
+          console.log(" vibrated");
+          navigator.vibrate(1000);
+        } else {
+          console.log("can not vibrate");
+        }
+        // console.log("object");
+        let num = 9795881084;
+        window.location.href = "tel://" + num;
+      }
+      function contact() {
+        if (navigator.vibrate) {
+          console.log(" vibrated");
+          navigator.vibrate(1000);
+        } else {
+          console.log("can not vibrate");
+        }
+        window.scrollTo(0, document.body.scrollHeight);
+      }
+      function callqiyam() {
+        if (navigator.vibrate) {
+          console.log(" vibrated");
+          navigator.vibrate(1000);
+        } else {
+          console.log("can not vibrate");
+        }
+        let num = 9935355836;
+        window.location.href = "tel://" + num;
+      }
+    </script>
+  </body>
+</html>

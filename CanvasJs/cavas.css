@@ -1,0 +1,127 @@
+.headncontainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    }
+    .head{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+.container{
+    margin-top: 5vh;
+    height: 61vh;
+    width: 50vw;
+    border: 3px solid black;
+}
+h1{
+  margin-top: 35px;
+  /* color: rgb(67, 65, 65); */
+}
+.contflex{
+    margin-top: 5vh;
+    height: 67vh;
+    width: 52vw;
+    border: 3px solid grey;
+    margin-left: 25vw;
+}
+.item{
+    margin-top: 60px;
+    border: 3px solid black;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    
+}
+.aerrow{
+    margin-top: 38px; 
+    font-size: 50px;
+    margin-left: 44vw;
+}
+
+#item1{
+    background-color: yellow;
+}
+#item2{
+    background-color: blue;
+}
+#item3{
+    background-color: red;
+}
+#item4{
+    background-color: green;
+}
+ .flex{
+    display: flex;
+
+}
+ #flex{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column; 
+} 
+#flexitem1{
+    display: flex;
+   justify-content: space-between; 
+}
+#flexitem2{
+    display: flex;
+   justify-content: space-between; 
+}
+#flexitem3{
+    display: flex;
+   justify-content: space-between; 
+
+}
+#flexitem4{
+    display: flex;
+   justify-content: space-between; 
+}
+ #btn{
+    height: 30px;
+    width: 70px;
+    margin-left: 71vw;
+    margin-top: 20px;
+    background-color: red;
+ }
+ #darkmode{
+  position: fixed;
+  bottom: 80px;
+  left: 25vw;
+ 
+ }
+ @media screen and (max-width:1040px) {
+      .aerrow{
+        margin-left: 40vw;
+      }
+      #btn{
+        margin-left: 69vw;
+      }
+
+ }
+ @media screen and (max-width:700px) {
+      .aerrow{
+        margin-left: 35vw;
+      }
+      #btn{
+        margin-left: 62vw;
+      }
+
+ }
+ @media screen and (max-width:470px) {
+      .aerrow{
+        margin-left: 70vw;
+      }
+      #btn{
+        margin-left: 81vw;
+      }
+      .contflex{
+        width: 98vw;
+        margin-left: 1vw;
+      }
+      #darkmode{
+        left: 1vw;
+      }
+ }

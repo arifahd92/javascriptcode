@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="watch.js"></script>
+    <link rel="stylesheet" href="watch.css" />
+    <title>Document</title>
+    <!-- <style>
+      .mancont {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* border: 3px solid red; */
+        height: 100vh;
+        width: 100vw;
+        background-image: url("Screenshot_2023_0219_120708 (1).png");
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlQ2tagMP_DfJdBlGT1y_hE_kqJOPo00HCgZ_rw5DjRg&s");
+        background-image: url("https://s3.us-west-2.amazonaws.com/images.unsplash.com/small/photo-1625219847303-aacdde328f31");
+        background-attachment: fixed;
+
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .watch {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* border: 3px solid red; */
+        border-radius: 50%;
+        height: 60vh;
+        width: 60vh;
+      }
+      .centre {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 5px solid yellow;
+        border-radius: 50%;
+        height: 10px;
+        width: 10px;
+        margin-left: 4px;
+        margin-bottom: 3px;
+      }
+      .sec {
+        border: 2px solid rgb(0, 0, 0);
+        height: 25vh;
+        width: 2px;
+        position: absolute;
+        top: 25vh;
+        left: 50vw;
+        transform-origin: bottom;
+      }
+      .minute {
+        border: 2.5px solid rgb(54, 64, 139);
+        height: 22vh;
+        width: 3px;
+        position: absolute;
+        top: 28vh;
+        left: 50vw;
+        transform-origin: bottom;
+      }
+      .hour {
+        border: 3px solid rgb(66, 177, 142);
+        height: 20vh;
+        width: 4.5px;
+        position: absolute;
+        top: 30vh;
+        left: 50vw;
+        transform-origin: bottom;
+      }
+      .num {
+        position: absolute;
+        color: rgb(48, 95, 48);
+        border-radius: 100%;
+      }
+      #twl {
+        top: calc(20vh - 10px);
+        left: calc(50vw - 15px);
+        font-size: 30px;
+      }
+      #six {
+        top: calc(80vh - 37px);
+        left: 50vw;
+        font-size: 30px;
+      }
+      #nine {
+        top: calc(50vh - 15px);
+        left: calc(50vw - 30vh);
+        font-size: 30px;
+      }
+      #three {
+        top: calc(50vh - 15px);
+        left: calc(50vw + 30vh - 19px);
+        font-size: 30px;
+      }
+      .digital {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 10%;
+        font-size: 25px;
+        color: rgb(45, 134, 104);
+      }
+      @media screen and (max-width: 455px) {
+        .watch {
+          height: 40vh;
+          width: 40vh;
+        }
+        #twl {
+          top: calc(30vh - 10px);
+        }
+        #six {
+          top: calc(70vh - 37px);
+        }
+        #three {
+          left: calc(50vw + 20vh - 19px);
+        }
+        #nine {
+          left: calc(50vw - 20vh);
+        }
+        .sec {
+          height: 18.8vh;
+          top: 31.2vh;
+        }
+        .minute {
+          height: 17.8vh;
+          top: 32.2vh;
+        }
+        .hour {
+          height: 16.5vh;
+          top: 33.5vh;
+        }
+      }
+    </style> -->
+  </head>
+  <body>
+    <div class="digital">
+      <div id="digital"></div>
+    </div>
+    <div class="mancont">
+      <div class="watch">
+        <div class="centre"></div>
+      </div>
+    </div>
+    <div class="sec" id="second"></div>
+    <div class="minute" id="minute"></div>
+    <div class="hour" id="hour"></div>
+    <div id="twl" class="num">12</div>
+    <div id="three" class="num">3</div>
+    <div id="six" class="num">6</div>
+    <div id="nine" class="num">9</div>
+
+    <!-- <script>
+      // function watch (){
+      setInterval(() => {
+        d = new Date();
+        //  s= `${d.getHours()}:${d.getMinutes()}:${d.getSeconds()}`
+        s = d.toLocaleString();
+        //  console.log(s)
+        hh = d.getHours();
+        // document.write(hh)
+        mh = d.getMinutes();
+        sh = d.getSeconds();
+        hrotate = hh * 30 + mh / 2;
+        mrotate = mh * 6;
+        srotate = sh * 6;
+        hour.style.transform = `rotate(${hrotate}deg)`;
+
+        minute.style.transform = `rotate(${mrotate}deg)`;
+
+        second.style.transform = `rotate(${srotate}deg)`;
+
+        document.querySelector("#digital").innerText = s;
+      }, 1000);
+    </script> -->
+  </body>
+</html>
