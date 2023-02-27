@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        border: 1px solid red;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        background-color: aqua;
+      }
+      img {
+        border-radius: 50%;
+      }
+      .item {
+        border: 1px solid black;
+        width: 33vw;
+        height: fit-content;
+        /* min-width: 150px; */
+      }
+      .subitem {
+        width: 32vw;
+        /* min-width: 150px; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid blue;
+      }
+      @media screen and (max-width: 400px) {
+        .container {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+        }
+        .item {
+          /* flex-basis: 100%; */
+          width: 100vw;
+        }
+        .subitem {
+          width: 100vw;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="para">
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui optio culpa
+      nisi consectetur voluptatum debitis provident quibusdam esse, dolorem
+      corrupti illum distinctio necessitatibus minus odio, alias eveniet velit
+      aliquam nobis. Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+      Nulla repellat quisquam perferendis mollitia deleniti! Earum perferendis
+      adipisci beatae deleniti alias, delectus quia inventore omnis, molestiae,
+      suscipit reprehenderit esse dolore sapiente? Lorem ipsum dolor sit amet
+      consectetur adipisicing elit. Quis, assumenda quia cum quibusdam magni
+      temporibus deleniti odio voluptas similique nemo laborum magnam
+      exercitationem vitae! Nesciunt corporis ea corrupti. Tenetur, ad?
+    </div>
+    <div class="container">
+      <div class="item">
+        <div class="subitem">
+          <img
+            height="150px"
+            width="150px"
+            src="madarsa\WhatsApp Image 2023-02-15 at 09.07.59.jpeg"
+            alt=""
+          />
+        </div>
+        <div class="subitem">
+          <div class="img">
+            name and village Lorem ipsum dolor, sit amet consectetur adipisicing
+            elit. Consectetur quaerat fuga expedita est nisi vero sapiente amet
+            accusamus, eum sed ullam modi et sint eligendi, beatae totam dolor
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="subitem">
+          <img
+            height="150px"
+            width="150px"
+            src="madarsa\WhatsApp Image 2023-02-15 at 09.07.59.jpeg"
+            alt=""
+          />
+        </div>
+        <div class="subitem">
+          name and village Lorem ipsum dolor, sit amet consectetur adipisicing
+          elit. Consectetur quaerat fuga expedita est nisi vero sapiente amet
+          accusamus, eum sed ullam modi et sint eligendi, beatae totam dolor
+        </div>
+      </div>
+      <div class="item">
+        <div class="subitem">
+          <img
+            height="150px"
+            width="150px"
+            src="madarsa\WhatsApp Image 2023-02-15 at 09.07.59.jpeg"
+            alt=""
+          />
+        </div>
+        <div class="subitem">
+          name and village Lorem ipsum dolor, sit amet consectetur adipisicing
+          elit. Consectetur quaerat fuga expedita est nisi vero sapiente amet
+          accusamus, eum sed ullam modi et sint eligendi, beatae totam dolor
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

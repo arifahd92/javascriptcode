@@ -22,7 +22,7 @@
     }
     .contwrap {
       display: flex;
-      justify-content: space-evenly;
+      justify-content: flex-start;
       text-align: center;
       align-items: center;
       flex-wrap: wrap;
@@ -118,21 +118,28 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      height: 60px;
+      /* height: calc(60px + auto); */
+      min-height: 60px;
+      height: fit-content;
+      flex-wrap: wrap;
+      /* first it will try to adjust with min height and then if not 
+      yani over flow hoga to fit content lelega width */
     }
-    .nav {
+    .navitem {
       display: flex;
       justify-content: center;
       align-items: center;
+      border: 3px solid red;
     }
     .qari {
       border: 5px solid grey;
-      width: 100%;
-      /* display: flex;
+      width: 50vw;
+      display: flex;
       justify-content: center;
       align-items: center;
-      flex-wrap: wrap; */
-      height: 310px;
+      flex-wrap: wrap;
+      min-height: 310px;
+      height: max-content;
       /* overflow-y: scroll;
       overflow-x: hidden; */
     }
@@ -162,15 +169,6 @@
     h3 {
       padding-left: 10px;
     }
-    .para {
-      padding-top: 10px;
-      padding-bottom: 10px;
-      padding-left: 5px;
-      padding-right: 5px;
-    }
-    /* #profilecontainer{
-
-    } */
     .admissionoffer {
       display: flex;
       height: 100px;
@@ -196,6 +194,16 @@
         transform: rotateY(50deg);
       }
     }
+    @media screen and (max-width: 320px) {
+      .navitem {
+        flex-basis: 100%;
+        /* width: 100vw; */
+        /* item ko flexbasis 100% diya matlab item ki width container ki width k barabar kar diya yaani sare ek sath wrap ho jayenge */
+      }
+      .profile {
+        flex-basis: 100%;
+      }
+    }
     @media screen and (max-width: 250px) {
       .qari {
         border: 5px solid grey;
@@ -204,21 +212,20 @@
       justify-content: center;
       align-items: center;
       flex-wrap: wrap; */
-        height: 310px;
-        overflow-y: scroll;
-        overflow-x: hidden;
+        /* overflow-y: scroll;
+        overflow-x: hidden; */
       }
     }
   </style>
   <body>
     <div class="contnav">
       <!-- <div class="nav"> -->
-      <span style="padding-left: 5px">home</span>
+      <span class="navitem" style="padding-left: 5px">home</span>
       <!-- <span onclick="contact()">contact</span> -->
-      <span> <a href="#contact">contact</a></span>
+      <span class="navitem"> <a href="#contact">contact</a></span>
 
-      <span>important link</span>
-      <span style="padding-right: 5px">Reg.No.-118</span>
+      <span class="navitem">important link</span>
+      <span class="navitem" style="padding-right: 5px">Reg.No.-118</span>
     </div>
     <div class="cont">
       <img

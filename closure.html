@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    closure when we return a fuction , then the fuction is returned with its
+    lexical scope
+    <script>
+      function parent(q = 9) {
+        let lexical_var = q;
+        function child(p = 5) {
+          let sum = lexical_var + p + q;
+          console.log(sum);
+          return sum;
+        }
+        return child; // this function is being returned with its lexical scope
+      }
+      let closedfunc = parent(10);
+      //   now i wanna call child without calling parant
+      closedfunc(8); //like child(8)
+      closedfunc(8);
+      var i = 4;
+      while (i > 0) {
+        closedfunc(i);
+        i--;
+      }
+    </script>
+  </body>
+</html>
