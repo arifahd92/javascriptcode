@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .cont,
+      .wrap,
+      .innerwrap,
+      .elm {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .cont {
+        height: 100vh;
+        width: 100vw;
+      }
+      .wrap {
+        flex-wrap: wrap;
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        background-color: rgb(122, 100, 70);
+      }
+      .innerwrap {
+        height: 16px;
+        width: 16px;
+      }
+      .elm {
+        font-size: larger;
+        color: aliceblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cont">
+      <div class="wrap">
+        <div class="innerwrap">
+          <span class="elm">→</span>
+        </div>
+        <div class="innerwrap">
+          <span class="elm">←</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    In JavaScript, parseInt() is a built-in function that allows you to convert
+    a string to an integer. The function takes two parameters: the string to be
+    converted, and the radix or base of the number system used in the string.
+    syntax
+    <h1>parseInt(num,radix)</h1>
+    radix is optional it is 10 by default ,num will be in decimal
+    <script>
+      // Converting a string to an integer with a radix of 10 (default)
+      let num1 = parseInt("123"); // num1 = 123
+      console.log(num1);
+      // Converting a string to an integer with a radix of 2 (binary)
+      let num2 = parseInt("101010", 2); // num2 = 42
+      console.log(num2);
+      // Converting a string to an integer with a radix of 16 (hexadecimal)
+      let num3 = parseInt("FF", 16); // num3 = 255
+      console.log(num3);
+      // Converting a string with non-numeric characters to an integer
+      let num4 = parseInt("He5llo"); // num4 = NaN
+      console.log(num4);
+      let num5 = parseInt("6He5llo"); // num4 = 6
+      console.log(num5);
+    </script>
+  </body>
+</html>

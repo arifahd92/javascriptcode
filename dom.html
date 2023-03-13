@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="num">
+      <div class="numplate">1</div>
+      <div class="numplate">2</div>
+      <div class="numplate">3</div>
+      <div class="numplate">4</div>
+      <div class="numplate">5</div>
+    </div>
+    <button id="incbtn" onclick="inc()">inc</button>
+    <button id="decbtn" onclick="dec()" disabled>dec</button>
+    <script>
+      let num = document.querySelectorAll(".numplate");
+      console.log("object");
+      let n = 5;
+      console.log(typeof num);
+      for (let i = 0; i < n; i++) {
+        let res = num[i].textContent;
+        console.log(res);
+      }
+      function inc() {
+        for (let i = 0; i < n; i++) {
+          num[i].textContent = +num[i].textContent + 5;
+          decbtn.disabled = false;
+        }
+      }
+      function dec() {
+        for (const iterator of num) {
+          if (iterator.textContent <= 1) {
+            decbtn.disabled = true;
+            console.log("limit reached");
+            return;
+          }
+          iterator.textContent = +iterator.textContent - 5;
+        }
+      }
+    </script>
+  </body>
+</html>
