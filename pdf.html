@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>COVID-19 API in Javascript</title>
+  </head>
+  <style></style>
+  <body>
+    <div id="content">
+      <h1>This is the heading</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Country</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Gautam</td>
+            <td>25</td>
+            <td>India</td>
+          </tr>
+          <tr>
+            <td>Kane</td>
+            <td>25</td>
+            <td>New Zealand</td>
+          </tr>
+          <tr>
+            <td>Harry</td>
+            <td>25</td>
+            <td>England</td>
+          </tr>
+          <tr>
+            <td>Jim</td>
+            <td>25</td>
+            <td>Canada</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <button onclick="savepdf()">downlod</button>
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+  <script>
+    let doc = new jsPDF();
+    let h1 = document.querySelector("#content");
+    doc.fromHTML(h1, 15, 15);
+    function savepdf() {
+      doc.save("output.pdf");
+    }
+  </script>
+</html>
