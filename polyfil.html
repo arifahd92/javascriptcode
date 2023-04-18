@@ -8,26 +8,27 @@
   </head>
   <body>
     <script>
+      const number = [1, 2, 3, 4, 5];
+      // what is map method
       number.map((item) => {
         return item * 2;
       });
-      const number = [1, 2, 3, 4, 5];
       //  polyfill of map method
 
       function polymap(calback) {
         let newarr = [];
         for (let i = 0; i < this.length; i++) {
-          newarr.push(calback(this[i]));
+          newarr.push(calback(this[i])); // this is reffering to number array
         }
         return newarr;
       }
 
       Array.prototype.polymap = polymap;
 
-      const mappedarr = number.polymap((item) => {
+      const mappedArr = number.polymap((item) => {
         return item * 2;
       });
-      console.log(mappedarr);
+      console.log(mappedArr);
 
       //poly fill of filter method
 
@@ -35,8 +36,8 @@
         let newarr = [];
         for (let i = 0; i < this.length; i++) {
           let res = calback(this[i]);
-          if (res != undefined) {
-            newarr.push(res);
+          if (res) {
+            newarr.push(this[i]);
           }
         }
         return newarr;
@@ -45,9 +46,9 @@
       Array.prototype.polyfilter = polyfilter;
       let filtered = number.polyfilter((item) => {
         if (item % 2 == 0) {
-          return item;
+          return true;
         }
-        return;
+        return false;
       });
       console.log(filtered);
     </script>

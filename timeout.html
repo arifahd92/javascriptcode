@@ -12,7 +12,7 @@
       function c() {
         for (let i = 1; i < 6; i++) {
           setTimeout(() => {
-            console.log(i);
+            console.log(i); //i to 5
           }, i * 1000);
         }
       }
@@ -26,6 +26,10 @@
       }
       c();
       d();
+      let input = [1, 2, "a", "b", 3, 4, 5];
+
+      let output = input.filter((item) => !isNaN);
+      console.log(output);
     </script>
   </body>
 </html>

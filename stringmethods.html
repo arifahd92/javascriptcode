@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    split method is used to convert an string into array into
+    <script>
+      let str = "Hello My Name is Md Arif";
+
+      console.log(str.split()); // ["Hello My Name is Md Arif"];
+
+      console.log(str.split("")); // ['H', 'e', 'l', 'l', 'o', ' ', 'M', 'y', ' ', 'N', 'a', 'm', 'e', ' ', 'i', 's', ' ', 'M', 'd', ' ', 'A', 'r', 'i', 'f']
+
+      console.log(str.split(" ")); //['Hello', 'My', 'Name', 'is', 'Md', 'Arif']
+
+      console.log([...str]); // ['H', 'e', 'l', 'l', 'o', ' ', 'M', 'y', ' ', 'N', 'a', 'm', 'e', ' ', 'i', 's', ' ', 'M', 'd', ' ', 'A', 'r', 'i', 'f']
+    </script>
+  </body>
+</html>

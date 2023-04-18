@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let arr = [1, 2, 3, 4, 5];
+      function polymap(callback) {
+        let mappedArr = [];
+        for (let i = 0; i < this.length; i++) {
+          mappedArr.push(callback(this[i]));
+        }
+        console.log(mappedArr);
+      }
+      Array.prototype.polymap = polymap;
+      arr.polymap((item) => item * 2);
+      Array.prototype.polyfilter = polyfilter;
+      filteredArr = arr.polyfilter((item) => item % 2 == 0);
+      console.log(filteredArr);
+      function polyfilter(callback) {
+        let filteredArr = [];
+        for (let i = 0; i < this.length; i++) {
+          let res = callback(this[i]);
+          if (res) {
+            filteredArr.push(this[i]);
+          }
+        }
+        return filteredArr;
+      }
+    </script>
+  </body>
+</html>
