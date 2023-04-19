@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>bubbling and capturing</title>
+  </head>
+  <style>
+    div {
+      margin: 50px;
+      padding: 50px;
+      border: 2px solid red;
+    }
+  </style>
+  <body>
+    <div id="grandparent">
+      <div id="parent">
+        <div id="child"></div>
+      </div>
+    </div>
+
+    <script>
+      let grandparent = document.getElementById("grandparent");
+      let parent = document.getElementById("parent");
+      let child = document.getElementById("child");
+      /* grandparent.addEventListener("click", function grandparent() {
+        console.log("grand parent got clicked");
+      });
+      grandparent.addEventListener("mouseover", () => {
+        console.log("mouse hovered on grasnd parent");
+      });
+      parent.addEventListener("click", function parent() {
+        console.log("parent got clicked");
+      });
+      child.addEventListener("click", function child() {
+        console.log("child got clicked");
+      });*/
+      /* in above case when you will click on child from child to grandparent on click call hoga
+      and when u will click on parent ,parents and grandparents on click will be triggered respectively
+      and when you will hover an any div grand parents hover event will get triggered*/
+      grandparent.addEventListener(
+        "click",
+        function grandparent() {
+          console.log("grand parent got clicked");
+        },
+        true
+      ); //capturing
+
+      parent.addEventListener(
+        "click",
+        function parent() {
+          console.log("parent got clicked");
+        },
+        true
+      ); //bubbling
+      child.addEventListener(
+        "click",
+        function child() {
+          console.log("child got clicked");
+        },
+        true
+      );
+      /*event capturing only will take place,will start from top most to till clickrd event */
+      /*
+      grandparent.addEventListener(
+        "click",
+        function grandparent() {
+          console.log("grand parent got clicked");
+        },
+        true
+      ); //capturing
+
+      parent.addEventListener(
+        "click",
+        function parent() {
+          console.log("parent got clicked");
+        },
+        false
+      ); //bubbling
+      child.addEventListener(
+        "click",
+        function child() {
+          console.log("child got clicked");
+        },
+        true
+      ); //capturing
+      */
+      /*first capturing phase will take place from top to till clicked element(top to bottom) 
+      and then bubbling phase will start from click to top mostsuppose u clicked on child to pahle grandparent ka click 
+      and then  child ka and then bubbling wil occore and it will start from clicked and will move to top 
+      and only bubble wale ka clicked event run hoga*/
+    </script>
+  </body>
+</html>
