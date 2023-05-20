@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+      </head>
+      <body>
+        <script>
+          const promise1 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+              resolve("Promise 1 resolved");
+            }, 10000);
+          });
+
+          const promise2 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+              resolve("Promise 2 resolved");
+            }, 3000);
+          });
+
+          const promise3 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+              resolve("Promise 3 resolved");
+            }, 1000);
+          });
+
+          Promise.all([promise1, promise2, promise3])
+            .then((values) => {
+              console.log(values); // Output: ['Promise 1 resolved', 'Promise 2 resolved', 'Promise 3 resolved']
+            })
+            .catch((error) => {
+              console.log(error); // Will not be called in this example
+            });
+        </script>
+      </body>
+    </html>
+  </body>
+</html>

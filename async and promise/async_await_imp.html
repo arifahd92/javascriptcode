@@ -66,16 +66,24 @@
       // promisefunc().then((data) => console.log(data));// im promise func
       const asyncfunc = async () => {
         const data1 = await promisefunc();
-        console.log(data1);
+        console.log(data1); //im promise func, promise_func ki resolved value
         const data2 = await promise;
-        console.log(data2);
-        /*super important await k baad promise ya promise returning function call 
-        and thus promise.then((data)=>return data ) ka kam await karega aur await wale variable me store karega
-        yani await k baad likhe hue promise k resolve ki value await waale variable me store hoga*/
+        console.log(data2); //promise,promise ki resolved value
+        return [data1, data2];
+        /********************************************************************************************************************
+        super important await k baad promise ya promise returning invoked function dete hain
+        and thus promise.then((data)=>return data ) ka kam await karega aur await wale variable 
+        me data ( us promise k resolve ki value store karega)
+        yani await k baad likhe hue promise k resolve ki value await waale variable me store hoga
+        agar data 1 and data 2 ko array me rakh kar return kar denge to asyncfunc().then((data)=>me data k andar 
+        dono ki resolve value milega)
+        ********************************************************************************************************************/
       };
-      asyncfunc();
-      /*suppose you have multiple promise and you want exicute them one by one then put them iside async function 
-      respectively*/
+      asyncfunc().then((data) => console.log(data));
+      /**********************************************************************************************************************
+       suppose you have multiple promise and you want exicute them one by one then put them iside async function 
+      respectively
+      ***********************************************************************************************************************8*/
     </script>
   </body>
 </html>
