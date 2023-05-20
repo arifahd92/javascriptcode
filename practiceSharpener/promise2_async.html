@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      async function getColdDrinks() {
+        try {
+          const butter = await getButter();
+          const coldDrinks = await fetchColdDrinks();
+          return coldDrinks;
+        } catch (error) {
+          console.error("Error:", error);
+          throw error;
+        }
+      }
+
+      async function getButter() {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            console.log("Husband got butter.");
+            resolve("butter");
+          }, 2000);
+        });
+      }
+
+      async function fetchColdDrinks() {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            console.log("Husband got cold drinks.");
+            resolve("cold drinks");
+          }, 3000);
+        });
+      }
+
+      // Calling getColdDrinks
+      getColdDrinks()
+        .then((result) => {
+          console.log("Result:", result);
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    async await In JavaScript, await is used within an async function to pause
+    the execution of the function until a promise is resolved. When using await,
+    the code waits for the promise to settle and then retrieves the resolved
+    value. This allows for writing asynchronous code in a more synchronous and
+    readable manner.
+    <br />
+    In the code snippet above, fetchData is an async function that makes an
+    asynchronous API call using the fetch function. By using await before fetch,
+    the function pauses until the promise returned by fetch is resolved. Once
+    the promise is resolved, the resolved value (in this case, the fetched data)
+    is stored in the data variable, and further processing can be done. The
+    await keyword can only be used inside an async function. It simplifies the
+    syntax and allows you to write asynchronous code that looks more like
+    synchronous code, improving readability and maintainability.
+    <script>
+      // Asynchronous function
+      /* const fetchData = async () => {
+         try {
+           const res = await fetch("https://jsonplaceholder.typicode.com/users"); // Pause execution and wait for the promise to resolve
+           console.log("value of data");
+           console.log(res); // Process the resolved value
+           const data = await res.json();
+           console.log(data);
+         } catch (error) {
+           console.error(error); // Handle any errors that occur during the promise resolution
+         }
+       };
+
+       fetchData();
+       */
+
+      /*const my_data = fetch("https://jsonplaceholder.typicode.com/users")
+         .then((res) => res.json())
+         .then((data) => {
+           console.log(data);
+           return data;
+         });
+       my_data.then((data) => {
+         console.log(data);
+       });*/
+
+      const promise = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve("im promise");
+        }, 1000);
+      });
+      /* promise.then((res) => {
+         console.log(res);//im promise get printed
+       });*/
+      function promisefunc() {
+        return new Promise((res, rej) => {
+          setTimeout(() => {
+            res("im promise func");
+          }, 5000);
+        });
+      }
+      // promisefunc().then((data) => console.log(data));// im promise func
+      const asyncfunc = async () => {
+        const data1 = await promisefunc();
+        console.log(data1);
+        const data2 = await promise;
+        console.log(data2);
+        /*super important await k baad promise ya promise returning function call 
+        and thus promise.then((data)=>return data ) ka kam await karega aur await wale variable me store karega
+        yani await k baad likhe hue promise k resolve ki value await waale variable me store hoga*/
+      };
+      asyncfunc();
+    </script>
+  </body>
+</html>

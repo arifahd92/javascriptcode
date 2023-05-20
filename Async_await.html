@@ -11,6 +11,7 @@
       async function fetchfxn() {
         return "hellow world"; //fullfilled promise wiil be return
         // it can be treated as resolve(hellow world) of promise object
+        //it can be accessed using fetchfxn().then((data)=>clg(data)) output helloworld
       }
       let res = fetchfxn();
       console.log(res); //Promise {<fulfilled>: 'hellow world'}
@@ -25,6 +26,7 @@
 
       async function fetchmethod() {
         const res = await fetch("https://jsonplaceholder.typicode.com/users");
+        //await is used before a promise and in res resolved data will get stored
         const data = await res.json();
         console.log("im res", res);
         return data;
