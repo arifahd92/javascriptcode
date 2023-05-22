@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    dynamic key in an object
+  </body>
+  <script>
+    const obj = {
+      name: "md arif",
+      email: "arifahd92@gmail.com",
+    };
+
+    console.log(obj["name"]); // Output: md arif
+    console.log(obj.name); // Output: md arif
+    obj.name = "taslim";
+    console.log(obj.name); // Output: md taslim
+    let key = "class";
+    obj[key] = "12";
+    console.log(obj);
+    let all_keys = Object.keys(obj);
+    console.log(all_keys); //[name,email,class]
+    let only_values = Object.values(obj);
+    console.log(only_values); //['taslim', 'arifahd92@gmail.com', '12']
+    for (var x in obj) {
+      console.log(x); //all key one by one
+      console.log(obj[x]); //values
+
+      //**************************************************************
+      //sort an object
+      var students = [
+        { name: "John", rollnumber: 3 },
+        { name: "Alice", rollnumber: 1 },
+        { name: "Bob", rollnumber: 2 },
+      ];
+
+      // Sort the array of objects by rollnumber
+      sortedByRollNumber = students.sort(function (a, b) {
+        return a.rollnumber - b.rollnumber;
+      });
+
+      // Print the sorted array
+      console.log(sortedByRollNumber);
+
+      //******************************************************************
+      // Sort the array of objects by name
+      sortedByName = students.sort(function (a, b) {
+        var nameA = a.name.toUpperCase();
+        var nameB = b.name.toUpperCase();
+        if (nameA < nameB) {
+          return -1;
+        }
+        if (nameA > nameB) {
+          return 1;
+        }
+        return 0;
+      });
+      console.log(sortedByName);
+    }
+  </script>
+</html>
