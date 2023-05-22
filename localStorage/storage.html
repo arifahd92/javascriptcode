@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    local storage
+    <script>
+      const obj1 = {
+        name: "md arif1",
+        email: "arifahd92@gmail.com1",
+      };
+      const obj2 = {
+        name: "md arif2",
+        email: "arifahd92@gmail.com2",
+      };
+      const obj3 = {
+        name: "md arif3",
+        email: "arifahd92@gmail.com3",
+      };
+      const obj4 = {
+        name: "md arif4",
+        email: "arifahd92@gmail.com4",
+      };
+
+      localStorage.setItem(obj1.name, JSON.stringify(obj1));
+      localStorage.setItem(obj2.name, JSON.stringify(obj2));
+      localStorage.setItem(obj3.name, JSON.stringify(obj3));
+      localStorage.setItem(obj4.name, JSON.stringify(obj4));
+
+      //document.addEventListener("DOMContentLoaded", function () {
+      // Get all keys from local storage
+      var keys = Object.keys(localStorage); //array having all key of local storage
+
+      // Create an empty object to store the data
+      var data = {};
+
+      // Iterate over each key and retrieve the corresponding value
+      keys.forEach((key) => {
+        data[key] = localStorage.getItem(key); //creating object parameter with key name and assigniong value
+        console.log(data[key]);
+      });
+
+      // Print the retrieved data
+      console.log(data); //
+      //});
+    </script>
+  </body>
+</html>
