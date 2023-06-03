@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    toLocalString()
+    <script>
+      const date = new Date();
+      console.log(date); //Sat Jun 03 2023 08:17:04 GMT+0530 (India Standard Time)
+      console.log(date.getDate()); //3
+      console.log(date.getDay()); //6(saturday ko 6 sunday ko probably 0)
+      console.log(date.getMonth()); //5, jan ko 0
+      console.log(date.getTime()); //1685760810745
+      console.log(date.getTimezoneOffset()); //-330
+      console.log(date.getUTCDate()); //3
+      console.log("imp");
+      //***************************************************************************************************************
+      let main = date.toLocaleString();
+      console.log(main); //6/3/2023, 8:27:07 AM
+      let month1 = date.toLocaleString("en-US", { month: "long" });
+      console.log(month1); //June
+      let month2 = date.toLocaleString("en-US", { month: "2-digit" }); //06 exact month 1 for january
+      console.log(month2);
+      let month3 = date.toLocaleString("en-US", { month: "short" }); //jun
+      console.log(month3);
+      let day = date.toLocaleString("en-US", { day: "2-digit" }); //03
+      console.log(day);
+      let day2 = date.toLocaleString("en-US", { day: "numeric" }); //3
+      console.log(day2);
+      let year = date.getFullYear();
+      console.log(year); //2023;
+      //**************************************************************************************************************
+    </script>
+  </body>
+</html>
