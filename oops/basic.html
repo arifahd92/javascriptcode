@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Person {
+        constructor() {
+          this.name = "max";
+        }
+        printName() {
+          console.log(`my name is ${this.name}`);
+        }
+        printAge() {
+          console.log(`my age is ${this.age}`);
+        }
+      }
+      const person = new Person();
+      // it is like Person p1 = new Person(), of java
+      // here type of p1 is Person but in javascript type is defined by let or const
+      person.age = 23; //this can be assigned in constructor also
+      person.printName();
+      person.printAge();
+
+      class Es7 {
+        name = "arif";
+        printname = () => {
+          console.log(`my name is ${this.name}`);
+        };
+      }
+      let a = new Es7();
+      a.printname();
+    </script>
+  </body>
+</html>

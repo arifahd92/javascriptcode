@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Axios CDN Example</title>
+  </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+      // Your JavaScript code using Axios
+      axios
+        .get("https://jsonplaceholder.typicode.com/users")
+        .then((response) => {
+          console.log("Request successful");
+          // Handle the response
+          console.log(response.data);
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          // Handle the error
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //*********************************************************
+      // using fetch api
+      // Define the data to send in the request
+      const requestData = {
+        name: "John Doe",
+        email: "johndoe@example.com",
+        message: "Hello, Fetch!",
+      };
+
+      // Make the POST request
+      fetch("https://api.example.com/post-endpoint", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(requestData),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          // Handle the response data
+          console.log("Response:", data);
+        })
+        .catch((error) => {
+          // Handle any errors that occurred during the request
+          console.error("Error:", error);
+        });
+      //*********************************************************
+      // using axios
+      //  const axios = require('axios');
+
+      // Define the data to send in the request
+
+      // Make the POST request
+      axios
+        .post("https://api.example.com/post-endpoint", requestData)
+        .then((response) => {
+          // Handle the response data
+          console.log("Response:", response.data);
+        })
+        .catch((error) => {
+          // Handle any errors that occurred during the request
+          console.error("Error:", error);
+        });
+    </script>
+  </body>
+</html>

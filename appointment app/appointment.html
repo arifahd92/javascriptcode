@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="#">
+      <input type="text" id="name" />
+      <input type="email" name="" id="email" />
+      <input type="number" name="number" id="number" />
+      <input type="submit" name="" id="submit" />
+    </form>
+    <ul id="list"></ul>
+    <script>
+      let inp = document.querySelectorAll("input");
+      let list = document.querySelector("#list");
+      let obj = {
+        name: "",
+        email: "",
+        phone: 0,
+      };
+      let data = {};
+      submit.addEventListener("click", (e) => {
+        e.preventDefault();
+        console.log(inp[0].value);
+        obj.name = inp[0].value;
+        obj.email = inp[1].value;
+        obj.phone = inp[2].value;
+        // console.log(obj);
+        if (obj.name && obj.email && obj.phone) {
+          localStorage.setItem(obj.email, JSON.stringify(obj));
+          inp[0].value = "";
+          inp[1].value = "";
+          inp[2].value = "";
+          showAppointment();
+        } else {
+          alert("fill all the details ");
+        }
+      });
+      function showAppointment() {
+        let keys = Object.keys(localStorage);
+        keys.forEach((key) => {
+          data[key] = localStorage.getItem(key);
+        });
+        //  let objdata = JSON.parse(data);
+        console.log(data + "saved data");
+        for (var x in data) {
+          console.log(JSON.parse(data[x]).name + "im data[x]");
+          let li = document.createElement("li");
+          li.innerText = `name:${JSON.parse(data[x]).name}- email:${
+            JSON.parse(data[x]).email
+          }-phone${JSON.parse(data[x]).phone}`;
+          list.appendChild(li);
+          let btn1 = document.createElement("button");
+          btn1.innerText = "edit";
+          let btn2 = document.createElement("button");
+          btn2.innerText = "delete";
+          li.appendChild(btn1);
+          li.append(btn2);
+        }
+      }
+    </script>
+  </body>
+</html>

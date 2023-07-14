@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      async function fun1() {
+        console.log("a");
+
+        console.log("b");
+
+        await setTimeout(() => console.log("c"), 1000);
+
+        await setTimeout(() => console.log("d"), 0);
+
+        console.log("e");
+      }
+      // fun1();//a b e d c
+      let pr1 = new Promise((res, rej) => {
+        setTimeout(() => {
+          res("c");
+        }, 1000);
+      });
+      let pr2 = new Promise((res, rej) => {
+        setTimeout(() => {
+          res("d");
+        }, 0);
+      });
+      console.log("object");
+      async function fun2() {
+        console.log("a");
+
+        console.log("b");
+        setTimeout(() => console.log("z"), 900);
+        let res1 = await pr1;
+        console.log(res1);
+        let res2 = await pr2;
+        console.log(res2);
+        console.log("e");
+      }
+
+      fun2(); //a b c d e
+    </script>
+  </body>
+</html>

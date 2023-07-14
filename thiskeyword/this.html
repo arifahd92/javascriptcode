@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>in normal function this key word refers to currently calling object</h1>
+    <h2>
+      in arrow function this is borrowed from enclosing scope (function) inside
+      which function arrow function is defined inherits this of that function if
+      it is not defined inside any function it will refer global window
+    </h2>
+    <script>
+      const obj = {
+        name: "arif",
+        printname: () => {
+          console.log(this); //Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+
+          //this will look enclosing scope or function and it will not found any function so this will refer to window
+        },
+      };
+      obj.printname();
+      console.log("second");
+      const obj2 = {
+        name: "arif",
+        printname: function () {
+          console.log(this); //{name: 'arif', printname: ƒ}
+          //"this" will refer to object which called printname method
+        },
+      };
+
+      obj2.printname();
+      obj3 = {
+        name: "gandhi",
+        email: "gandhi@gmail.com",
+      };
+      obj2.printname.call(obj3); //{name: 'gandhi', email: 'gandhi@gmail.com'}
+      obj.printname.call(obj3);
+      //************************************************************************************
+      const obj3 = {
+        normalFunc: function () {
+          console.log(this); // obj3
+          setTimeout(function () {
+            console.log(this); // window (or global object) because this function is not called directly with obj 3
+          }, 100);
+        },
+        arrowFunc: function () {
+          console.log(this); // obj3
+          setTimeout(() => {
+            console.log(this); // obj3 because it looked for parent and got a parent function from there copied this and parent was called with obj 3
+          }, 100);
+        },
+      };
+
+      obj3.normalFunc(); // 'this' is different inside the nested function
+      obj3.arrowFunc(); // 'this' is the same inside the nested arrow function
+    </script>
+  </body>
+</html>

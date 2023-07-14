@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    ghjk
+    <script>
+      const fetchData = async () => {
+        try {
+          const res = await fetch(
+            "https://bold-impulse-382818-default-rtdb.firebaseio.com/mdarif7312gmailcom.json"
+          );
+          const data = await res.json();
+          console.log(data);
+          let arr = [];
+          for (let key in data) {
+            const amount = data[key].amount;
+            let id = key;
+            arr.push({ id: key, dot: true, ...data[key] });
+          }
+          console.log(arr);
+        } catch (err) {
+          console.log(err);
+        } finally {
+          console.log("object");
+        }
+      };
+      fetchData();
+    </script>
+  </body>
+</html>

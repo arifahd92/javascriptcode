@@ -1,0 +1,12 @@
+<script>
+  function first(anotherFunction) {
+    setTimeout(() => {
+      console.log("a");
+      anotherFunction();
+    }, 2000);
+  }
+  function anotherFunction() {
+    console.log("b");
+  }
+  first(anotherFunction);
+</script>

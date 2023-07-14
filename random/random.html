@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /* var a = 50;
+
+      function fun() {
+        var a = 30;
+
+        let b = 20;
+
+        let c = 30;
+        {
+          var a = 20;
+          let b = 12;
+          c = 34;
+        }
+        console.log(a); //20
+        console.log(b); //20
+        console.log(c); //34
+      }
+
+      fun();
+
+      console.log(a); //50 not 30
+
+      const a = 10;
+
+      {
+        var a = 100;
+      }*/
+
+      //console.log(a); //syntax error a already declared
+      /*const a = 10;
+
+      {
+        const a = 20;
+
+        {
+          const a = 50;
+
+          console.log(a); //50
+        }
+
+        console.log(a); //20
+      }
+
+      console.log(a); //10
+      */
+      /*const a = 10;
+
+      {
+        const a = 20;
+
+        {
+          console.log(a); //20
+        }
+
+        console.log(a); //20
+      }
+
+      console.log(a); //10
+      */
+      // /*
+      console.log("object");
+      var a = 2;
+
+      var c = 2;
+
+      function b() {
+        var c = 4;
+
+        console.log(window.c); //2
+        console.log(this.c); //2
+      }
+
+      console.log(a); //2
+
+      console.log(this.a); //2
+
+      console.log(this.c); //2
+
+      console.log(this.x); //undefined
+
+      console.log(window.a); //2
+
+      console.log(window.x); //undefined
+      console.log("function call");
+      console.log(b());
+      //*/
+
+      /* var a = 7;
+      var b = 3;
+      function outerfunction() {
+        console.log(a);//undefined
+
+        var a = 10;
+
+        function innerfunction() {
+          console.log(a); //10
+
+          console.log(window.a + "im window.a"); //7
+
+          console.log(this.a + "im this.a"); //7
+        }
+        innerfunction();
+      }
+
+      outerfunction();
+      */
+      var a = 7;
+      var b = 3;
+      function outerfunction() {
+        console.log(a); //7
+
+        a = 10;
+
+        function innerfunction() {
+          console.log(a); //10
+
+          console.log(window.a + "im window.a"); //10
+
+          console.log(this.a + "im this.a"); //10
+        }
+        innerfunction();
+      }
+
+      outerfunction();
+      console.log(a);//10
+      let arr = [1, 2, 3];
+      arr[0] = 5;
+      console.log(arr);
+    </script>
+  </body>
+</html>

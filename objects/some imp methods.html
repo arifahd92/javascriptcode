@@ -4,10 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="bootstrap\bootstrap-4.0.0\bootstrap-4.0.0" />
     <title>Document</title>
   </head>
   <body>
-    dynamic key in an object
+    <button class="btn">tghuuuj</button>
   </body>
   <script>
     const obj = {
@@ -21,7 +22,12 @@
     console.log(obj.name); // Output: md taslim
     let key = "class";
     obj[key] = "12";
+    //for dynamik key
+    obj.village = "sihoriya";
+    obj["dist"] = "chandauli";
     console.log(obj);
+    // name: 'taslim', email: 'arifahd92@gmail.com', class: '12', village: 'sihoriya', dist:"chandauli"}
+    console.log("object");
     let all_keys = Object.keys(obj);
     console.log(all_keys); //[name,email,class]
     let only_values = Object.values(obj);
@@ -61,5 +67,43 @@
       });
       console.log(sortedByName);
     }
+
+    //******************************************************************
+    /*
+    const person1 = {
+      name: "max",
+    };
+    const person2 = person1; //person2 got referance of person1 so any changes in person1 at any instance will be accessible to person 2
+    console.log(person1 === person2); //true because refrence is same
+    console.log(person2.name);
+    person1.name = "arif";
+    const person3 = {
+      name: "max",
+      //fresh new object, any modification will not refer to person1,itis  pointing to a different new object
+    };
+    console.log(person1 == person3);  //false
+    console.log(person2.name); //arif , person1 memory me jise point kar raha hai usko hi perso2
+    // referance karega person2=person1 se
+    person2.name = "taslim";
+    console.log(person1.name); //taslim , dono object memory me same address ko refer kar rahe hai
+    //this behaviour is exactly same in array
+ */
+    //******************************************************************
+    //if you want to copy an object or array in another and do not want to reflect properties from new object or array to
+    //old one then use spread operator at the time of copying
+    //******************************************************************
+    // /*
+    const person1 = {
+      name: "max",
+    };
+    const person2 = { ...person1 }; //now person2 will not poin to person1, it is a brand new object
+    console.log(person2.name); //max
+    person1.name = "arif";
+
+    console.log(person2.name); // max
+    person2.name = "taslim";
+    console.log(person1.name); //arif
+    console.log(person2.name); //taslim
+    // */
   </script>
 </html>

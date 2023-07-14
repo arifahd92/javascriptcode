@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Function to check if a number is odd or even using memoization
+      function isOddOrEven(num, cache = {}) {
+        if (num in cache) {
+          return cache[num]; // If result is already cached, return it
+        }
+        console.log("cache");
+        console.log(cache);
+        const result = num % 2 === 0 ? "Even" : "Odd";
+        cache[num] = result; // Cache the result
+        return result;
+      }
+
+      // Example usage
+      console.log(isOddOrEven(5)); // Output: Odd
+      console.log(isOddOrEven(5)); // Output: Odd (Using cached result)
+      console.log(isOddOrEven(6)); // Output: Even
+      console.log(isOddOrEven(6)); // Output: Even (Using cached result)
+    </script>
+  </body>
+</html>

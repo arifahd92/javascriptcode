@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // call by value
+      function swap(a, b) {
+        let temp = a;
+        a = b;
+        b = a;
+      }
+      let a = 5;
+      let b = 4;
+      swap(a, b);
+      console.log({ a, b }); //a=5, b=4 because it was call by value
+
+      const swapelm = (arr2) => {
+        let temp = arr2[0];
+        arr2[0] = arr2[1];
+        arr2[1] = temp;
+      };
+
+      let arr = [5, 4];
+      swapelm(arr);
+      console.log(arr); // [4, 5] referance was passed thats why changes made by function reflected original array
+    </script>
+  </body>
+</html>

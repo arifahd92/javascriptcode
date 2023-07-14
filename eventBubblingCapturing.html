@@ -14,6 +14,10 @@
     }
   </style>
   <body>
+    <h1>
+      in capturing T true
+      <h1>in bubbling L false</h1>
+    </h1>
     <div id="grandparent">
       <div id="parent">
         <div id="child"></div>
@@ -87,9 +91,13 @@
       ); //capturing
       */
       /*first capturing phase will take place from top to till clicked element(top to bottom) 
-      and then bubbling phase will start from click to top mostsuppose u clicked on child to pahle grandparent ka click 
+      and then bubbling phase will start from click to top most suppose u clicked on child to pahle grandparent ka click 
       and then  child ka and then bubbling wil occore and it will start from clicked and will move to top 
-      and only bubble wale ka clicked event run hoga*/
+      and only bubble wale ka clicked event run hoga
+      *******************************************
+      in capturing T true
+      in bubbling L false
+      */
     </script>
   </body>
 </html>
