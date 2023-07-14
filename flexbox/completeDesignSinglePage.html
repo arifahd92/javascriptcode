@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        margin: 0ch;
+        padding: 0%;
+        background-color: blue;
+        height: 100vh;
+        display: flex;
+        flex-direction: column; /* saare ek k baad ek,  nav ko ek row mil gaya, content ko ek row mil gaya and footer ko bhi */
+        text-align: center;
+      }
+      .containt {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      .foot {
+        height: 10vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .nav {
+        height: 10vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+      }
+      .item1 {
+        /* flex-grow: 1; */
+        height: 80vh;
+        width: 10vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .item3 {
+        /* flex-grow: 1; */
+        height: 80vh;
+        width: 25vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .item2 {
+        /* flex-grow: 2; */
+        width: 65vw;
+        height: 80vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      img {
+        height: 80vh;
+        width: 25vw;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div style="background-color: red" class="nav">
+        <div>home</div>
+        <div>home</div>
+        <div>log</div>
+        <div>con</div>
+        <div>ok</div>
+      </div>
+      <div class="containt">
+        <div style="background-color: aqua" class="item1">
+          <div>home</div>
+          <div>home2</div>
+          <div>home3</div>
+          <div>home4</div>
+        </div>
+        <div style="background-color: green" class="item2">
+          Lorem ipsum dolor sit amet, consectetur adipisicing Lorem ipsum dolor
+          sit amet consectetur adipisicing elit. Ex, distinctio aut et quaerat
+          modi sequi, voluptatibus, odit officiis rerum ut eum ea
+          exercitationem? Officia adipisci tempora esse delectus perferendis
+          soluta. elit. Non laudantium corporis qui. Id nobis reiciendis
+          voluptatum iure nesciunt, deleniti natus perferendis magni ipsum odit
+          veniam inventore quia architecto ea deserunt.
+        </div>
+        <div style="background-color: yellow" class="item3">side2</div>
+      </div>
+      <div style="background-color: rgb(251, 14, 14)" class="foot">
+        i m footer
+      </div>
+    </div>
+  </body>
+</html>
