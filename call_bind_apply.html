@@ -35,6 +35,12 @@
       //   obj2.printname();
       //   obj3.printname()
       //   Syntax object name from where we want borrow method . method name . call(name of object that want borrow method)
+      //object as argument
+      function printAddress(tahsil, district) {
+        console.log("last");
+        console.log(this.name + " " + tahsil + " " + district); //subham chakiya chandauli
+      }
+      printAddress.call(obj3, "chakiya", "chandauli"); // in case of apply chakiya chandauli will be passed as array and also will be received in array form
     </script>
   </body>
 </html>

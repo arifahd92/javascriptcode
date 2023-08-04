@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    split and join me space dena
+    <script>
+      let name = "muhammad arif razvi";
+      let arr = name.split(" ");
+      //["muhammad", "arif", "razvi"];
+      console.log(arr);
+      let secarr = name.split();
+      console.log(secarr); //['muhammad arif razvi']
+      let thirdarr = name.split(""); // ['m', 'u', 'h', 'a', 'm', 'm', 'a', 'd', ' ', 'a', 'r', 'i', 'f', ' ', 'r', 'a', 'z', 'v', 'i']
+      console.log(arr.join(" ")); //muhammad arif razvi
+      console.log(arr.join("")); //muhammadarifrazvi
+      console.log(arr.join(",")); //muhammad,arif,razvi
+      console.log(arr.join()); //muhammad,arif,razvi
+      // remove duplicate char
+      let dup = "abbac"; // output abc
+      let duparr = [...dup];
+      let uniquearr = duparr.filter((elm, ind) => ind == duparr.indexOf(elm));
+      console.log(duparr); // ['a', 'b', 'b', 'a', 'c']
+      console.log(uniquearr); // ['a', 'b', 'c']
+      console.log(uniquearr.join(""));
+    </script>
+  </body>
+</html>

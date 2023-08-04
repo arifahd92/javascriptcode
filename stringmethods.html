@@ -7,7 +7,7 @@
     <title>Document</title>
   </head>
   <body>
-    split method is used to convert an string into array into
+    split method is used to convert an string into array
     <script>
       let str = "Hello My Name is Md Arif";
 
@@ -18,6 +18,8 @@
       console.log(str.split(" ")); //['Hello', 'My', 'Name', 'is', 'Md', 'Arif']
 
       console.log([...str]); // ['H', 'e', 'l', 'l', 'o', ' ', 'M', 'y', ' ', 'N', 'a', 'm', 'e', ' ', 'i', 's', ' ', 'M', 'd', ' ', 'A', 'r', 'i', 'f']
+      let arr = ["Hello", "My", "Name", "is", "Md", "Arif"];
+      console.log(arr.join(" ")); //Hello My Name is Md Arif
     </script>
   </body>
 </html>

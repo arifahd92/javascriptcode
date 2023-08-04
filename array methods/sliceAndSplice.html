@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    slice splice It's important to note the key difference between these
+    methods: slice() does not modify the original array and returns a new array
+    containing the extracted elements, while splice() directly modifies the
+    original array and can also add new elements at the specified position.
+    ******************************************************************************
+    splice() method: The splice() method is used to add or remove elements from
+    an array. Unlike slice(), it directly modifies the original array. The
+    splice() method takes multiple parameters: start: The index at which to
+    start changing the array. deleteCount: The number of elements to remove from
+    the array. If set to 0, no elements are removed. item1, item2, ...: The
+    elements to add to the array, starting at the start index. Example of
+    splice():
+
+    <script>
+      //                     0  1  2  3  4
+      const originalArray = [1, 2, 3, 4, 5];
+      const slicedArray = originalArray.slice(1, 4); // Returns a new array [2, 3, 4] ek tukda kaat ke tukda hi do
+      console.log(originalArray); // [1, 2, 3, 4, 5] (original array remains unchanged)
+      //splice         0  1  2  3  4
+      // splice me v tukda hi milta hai par tukda original se gayab ho jata hai
+      const myarray = [1, 2, 3, 4, 5];
+      const splicedArray = myarray.splice(1, 2, 6, 7); // Removes [2, 3] and adds [6, 7]
+      // first arg is starting index second is no of element should be deleted from starting and others are to be inserted
+      console.log("splicedArray=", splicedArray);
+      console.log(myarray); // [1, 6, 7, 4, 5] (original array is modified)
+
+      // You can also use splice() to remove elements without adding any new ones:
+      const removedElements = myarray.splice(2, 2); // Removes [7, 4]
+      console.log(removedElements); // [7, 4]
+      console.log(myarray); // [1, 6, 5] (myarray is modified)
+    </script>
+  </body>
+</html>

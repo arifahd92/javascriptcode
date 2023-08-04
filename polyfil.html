@@ -26,6 +26,7 @@
       Array.prototype.polymap = polymap;
 
       const mappedArr = number.polymap((item) => {
+        //polymap ko call kiya ek object associate kiya   aur ek function as a arrgument pass kiya jo polymap me accessible hoga and jab wo function cal hoga with a number to us no ka double return karega
         return item * 2;
       });
       console.log(mappedArr);
