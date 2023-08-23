@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+      let arr = [1, 2, 3, 6, 7, 9, 4, 7, 10];
+      let st = [];
+      st.push(Number.MIN_VALUE);
+      arr.forEach((elm) => {
+        if (elm > st.peek()) {
+          st.push(elm);
+        }
+      });
+      st.pop();
+      console.log(st.peek());
+      */
+      //above did not wrk
+      let arr = [1, 1, 1, 1, 1, 1];
+      // let arr = [1, 2, 3, 6, 7, 9, 4, 7, 10];
+      let st = []; //it is behaving like another array ony supporting push pop method
+      //if you want access peek of st then use concept of array you r pushing elm in right (default nature of push method )
+      // now you can acces right most(or  you can say peek()) using st[st,length-1]
+      st.push(Number.MIN_VALUE);
+      let count = 0;
+      arr.forEach((elm) => {
+        if (elm > st[st.length - 1]) {
+          st.push(elm);
+          count++;
+        }
+      });
+      if (count < 2) {
+        console.log("all are equal");
+      } else {
+        st.pop(); // Remove the largest element
+        console.log(st[st.length - 1]); // Peek the last element, which is the second-largest
+      }
+      //**********************************************************************************
+      /*
+      let stack = [];
+      stack.push(Number.MIN_VALUE);
+      for (let i = 0; i < arr.length; i++) {
+        if (stack.peek() < arr[i]) {
+          stack.push(arr[i]);
+        }
+      }
+      stack.pop();
+      let ans = stack.peek();// throwing error
+      document.write(ans);
+      */
+    </script>
+  </body>
+</html>

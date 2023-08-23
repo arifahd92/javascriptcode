@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const productObj = [];
+      const productArr = [];
+      class Product {
+        constructor(name) {
+          this.data = name;
+        }
+        save() {
+          productObj.push(this);
+          // this is an object {data:"arif"}
+          productArr.push(this.data); //only name will be pushed
+        }
+        static getAll() {
+          //call it via class name due to static
+          console.log(productArr); //["arif,taslim"]
+          return productObj;
+        }
+      }
+      let p1 = new Product("arif");
+      let p2 = new Product("taslim");
+      p1.age = 23;
+      p1.save();
+      p2.save();
+      console.log(p1); //{data:"arif"}
+      const data = Product.getAll();
+      console.log(data); //[{data:'arif'}, {data:"taslim"}]
+    </script>
+  </body>
+</html>
