@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+        /*
+      function asyncFunction1() {
+        return new Promise(function (resolve, reject) {
+          setTimeout(function () {
+            console.log("Task 1 done.");
+            resolve("Result 1"); //it is equivalent to  , calledByPromise(result1)
+          }, 1000);
+        });
+      }
+      //what the hell .then is
+      //.then takes a function as arguement and pass that fuction to promise, and promise
+      //call back that function (by naming that callback function as resolve )
+      asyncFunction1.then((a) => {
+        console.log(a);
+      });
+      asyncFunction1.then(calledByPromise);
+
+      function calledByPromise(a) {
+        console.log(a);
+      }
+      */
+      function asyncFunction1() {
+  return new Promise(function (resolve, reject) {
+    setTimeout(function () {
+      console.log("Task 1 done.");
+      resolve("Result 1");
+    }, 1000);
+  });
+}
+
+function asyncFunction2(result1) {
+  return new Promise(function (resolve, reject) {
+    setTimeout(function () {
+      console.log("Task 2 done.");
+      resolve("Result 2");
+    }, 1000);
+  });
+}
+
+function asyncFunction3(result2) {
+  return new Promise(function (resolve, reject) {
+    setTimeout(function () {
+      console.log("Task 3 done.");
+      resolve("Result 3");
+    }, 1000);
+  });
+}
+
+asyncFunction1()
+  .then(asyncFunction2)//asyncFunction1 ka resolve("result1") means asyncFunction2("result1"),
+  // matlab asyncFunction1 ka promise asyncFunction2 ko call karega... AND SO ON
+  .then(asyncFunction3)
+  .then(function (result3) {
+    console.log("All tasks completed:", result3);
+  })
+  .catch(function (error) {
+    console.error("An error occurred:", error);
+  });
+
+    </script>
+  </body>
+</html>

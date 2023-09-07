@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    let data='{"title":"arif","title":"arif","title":"arif"}'
+ const productFromFile = JSON.parse(data);
+                    console.log(productFromFile) why only single title object being printed
+ChatGPT
+In JSON, object keys must be unique. If you have multiple key-value pairs with the same key, the parser will consider only the last occurrence of that key. This is why in your example, only a single "title" key is being stored in the productFromFile object.
+
+Here's your example JSON data:
+
+javascript
+Copy code
+let data = '{"title":"arif","title":"arif","title":"arif"}';
+const productFromFile = JSON.parse(data);
+console.log(productFromFile);
+When you parse this JSON data, the repeated "title" keys will be ignored, and only the last occurrence will be considered. As a result, you will get the following output:
+
+css
+Copy code
+{ title: 'arif' }
+To have multiple titles stored, you should use an array of objects instead:
+
+javascript
+Copy code
+let data = '[{"title":"arif"},{"title":"arif"},{"title":"arif"}]';// it should be wrapped in single code only
+const productFromFile = JSON.parse(data);
+console.log(productFromFile);
+With this JSON array of objects, you will get:
+
+css
+Copy code
+[  { title: 'arif' },  { title: 'arif' },  { title: 'arif' }]
+Each object retains its separate "title" key-value pair because they are stored within an array and not as individual objects within the same JSON object.
+
+
+
+<script>
+    let data1 = '[{"title":"arif"},{"title":"arif"},{"title":"arif"}]';// it should be wrapped in single code only
+const productFromFile1 = JSON.parse(data1);
+console.log(productFromFile1);
+let data2 = '{"title":"arif","title":"arif","title":"arif"}';
+const productFromFile = JSON.parse(data2);
+console.log(productFromFile)//op title:"arif", unique op aata hai
+</script>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="inpt" />
+    <br />
+    <ul id="list"></ul>
+    <script>
+      let names = [];
+      const inpt = document.getElementById("inpt");
+      const list = document.getElementById("list");
+      let count = 0;
+      function getdata() {
+        let timer = "";
+        return function (cb) {
+          if (timer) {
+            clearTimeout(timer);
+          }
+          timer = setTimeout(() => {
+            fetch("https://jsonplaceholder.typicode.com/users")
+              .then((res) => res.json())
+              .then((data) => {
+                // cb(data[0].title);
+                let arr = [];
+                data.forEach((element) => {
+                  arr.push(element.name);
+                });
+                cb(arr);
+              });
+            console.log(`fetch got called- ${++count}`);
+          }, 700);
+        };
+      }
+      console.log(typeof inpt); //object
+      let betterfunction = getdata();
+      inpt.addEventListener("input", (e) => {
+        let val = e.target.value;
+        console.log(inpt.value);
+
+        betterfunction((data) => {
+          list.innerHTML = ""; // This will clear all children of the list
+          console.log(val);
+          const filteredNames = data.filter(
+            (name) => name.startsWith(val) || name.toLowerCase().includes(val)
+          );
+
+          const fragment = document.createDocumentFragment();
+          console.log(filteredNames);
+          filteredNames.forEach((elm) => {
+            let li = document.createElement("li");
+            li.innerText = elm;
+            fragment.appendChild(li);
+          });
+          list.appendChild(fragment);
+        });
+      });
+    </script>
+  </body>
+</html>

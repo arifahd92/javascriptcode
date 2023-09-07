@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input
+      type="text"
+      placeholder="withount debouncing"
+      onkeypress="getData()"
+      id="input1"
+    />
+    <input
+      type="text"
+      name=""
+      id="input2"
+      placeholder="with debouncing"
+      onkeypress="debouncedFunction()"
+    />
+    <script>
+      //const input1=document.querySelector("#input1")
+      //input.addEventListener("change",()=>{
+      //  getData()
+      // })
+      let count1 = 0;
+
+      function getData() {
+        //   console.log("get data called", ++count1);
+        setTimeout(() => {
+          console.log(
+            "getting response on each keypress after one second ",
+            ++count1
+          );
+        }, 1000);
+      }
+      //************************************************
+      function betterFunction(cb, delay) {
+        let timer;
+        return () => {
+          if (timer) {
+            clearTimeout(timer);
+          }
+          timer = setTimeout(() => {
+            cb(); //getData called with timer
+          }, delay);
+        };
+      }
+      const debouncedFunction = betterFunction(getData, 600); //here i called betterFunction manually one time ( debouncedFunction is being called on each input
+      //stored its returned value in debouncedFunction, returned value is a function so now i can call that function with debouncedFunction
+      //at each keypress first it is clearing prev. setTimeout and then registering new one if next key press will take delay of more than 600
+      //then than registerd willbe called other wise that will be cleared and newone will be set
+    </script>
+  </body>
+</html>

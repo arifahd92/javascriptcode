@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function asyncFunction1(callback) {
+        setTimeout(function () {
+          console.log("Task 1 done.");
+          callback("Result 1");
+        }, 1000);
+      }
+
+      function asyncFunction2(result1, callback) {
+        setTimeout(function () {
+          console.log("Task 2 done.");
+          callback("Result 2");
+        }, 1000);
+      }
+
+      function asyncFunction3(result2, callback) {
+        setTimeout(function () {
+          console.log("Task 3 done.");
+          callback("Result 3");
+        }, 1000);
+      }
+      //called asyncFunction1 with callback that callback will be called by asyncFunction1  and the callback
+      //also calling asyncFunction2 only when result1 is available,actually im grabbing value of result 1 then calling asyncFunction2
+      //value of result1 will be argument of callback inside asyncFunction1
+      asyncFunction1(function (result1) {
+        asyncFunction2(result1, function (result2) {
+          asyncFunction3(result2, function (result3) {
+            console.log("All tasks completed:", result3);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

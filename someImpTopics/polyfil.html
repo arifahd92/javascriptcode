@@ -45,7 +45,7 @@
       }
 
       Array.prototype.polyfilter = polyfilter;
-      let filtered = number.polyfilter((item) => {
+      let filtered = number.polyfilter((item) => {//polyfilter function will call this anonymous call back and will achieve returned value 
         if (item % 2 == 0) {
           return true;
         }

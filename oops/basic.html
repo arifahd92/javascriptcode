@@ -7,10 +7,14 @@
     <title>Document</title>
   </head>
   <body>
+    <h1>
+      inside class hame koi bhi data type ya function keyword nhi use karna
+      padta
+    </h1>
     <script>
       class Person {
         constructor() {
-          this.name = "max";
+          this.name = "max"; //created a property named name and assigned a default value max
         }
         printName() {
           console.log(`my name is ${this.name}`);
@@ -27,12 +31,14 @@
       person.printAge();
 
       class Es7 {
-        name = "arif";
+        name = "arif"; // without let var
         printname = () => {
           console.log(`my name is ${this.name}`);
+          //inside class this will refer to same object in case of aerow funcction too
         };
       }
       let a = new Es7();
+
       a.printname();
     </script>
   </body>

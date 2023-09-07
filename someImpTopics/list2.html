@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="inpt" /> <button id="btn1">add</button>
+    <ul id="list"></ul>
+    <script>
+      let list = document.getElementById("list");
+      let arr = [];
+      let indexes = -1;
+      let updateList = () => {
+        list.innerHTML = "";
+        arr.forEach((elm, index) => {
+          const li = document.createElement("li");
+          li.innerText = elm;
+          const btn = document.createElement("button");
+          const btnEdit = document.createElement("button");
+          btnEdit.innerText = "edit";
+          btn.innerText = "delete";
+          li.appendChild(btn);
+          li.appendChild(btnEdit);
+          list.appendChild(li);
+          btn.addEventListener("click", () => {
+            // Delete item from array and update the list
+            arr.splice(index, 1);
+            updateList();
+          });
+          btnEdit.addEventListener("click", () => {
+            inpt.value = arr[index];
+            btn1.innerText = "save";
+            indexes = index;
+          });
+        });
+      };
+      const btn1 = document.getElementById("btn1");
+      btn1.addEventListener("click", (index) => {
+        if (btn1.innerText == "add") {
+          let val = inpt.value;
+          arr.push(val);
+          console.log(val);
+          inpt.value = "";
+          updateList();
+        } else {
+          btn1.innerText = "add";
+          arr[indexes] = inpt.value;
+          inpt.value = "";
+          updateList();
+        }
+      });
+    </script>
+  </body>
+</html>

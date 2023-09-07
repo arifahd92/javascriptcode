@@ -6,16 +6,19 @@
     <title>Document</title>
   </head>
   <body>
+    <h1>first read basic then come here</h1>
     <script>
       const productObj = [];
       const productArr = [];
       class Product {
+        company = "royal";
         constructor(name) {
-          this.data = name;
+          this.data = name; //data property will be created
         }
         save() {
           productObj.push(this);
-          // this is an object {data:"arif"}
+          // this is reffering to p1 /p2  object (which one willl call this) for p1it it is  {data:"arif"}
+          //for p2 it is {data:taslim, age:56}
           productArr.push(this.data); //only name will be pushed
         }
         static getAll() {
@@ -26,7 +29,7 @@
       }
       let p1 = new Product("arif");
       let p2 = new Product("taslim");
-      p1.age = 23;
+      p2.age = 56; //age property will get created in p2
       p1.save();
       p2.save();
       console.log(p1); //{data:"arif"}

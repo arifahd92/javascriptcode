@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function main() {
+        var a = 60;
+        {
+          // const a = 8; //iske andar yahi a refer hoga
+          {
+            a = 50; //assignment to a constant variable error(jab line 13 active)//error accessing before initialization jab
+            // line 18 active, kyo ki ye a const ko hi refer kar raha
+          }
+          // const a = 60;
+          console.log(a);
+        }
+        // const a = 40; error it is trying to make scope in main function but var has already made scope in main function
+        //as var is functional scope
+        // console.log(a);
+      }
+      //main();
+      function main2() {
+        // const a = 890 //can not
+        {
+          {
+            const a = 50;
+          }
+          {
+            var a = 30;
+          }
+          /*
+           const a = 60; //cant declare, ye purpule waale me declared hai so usi me scope banane ki koshish kar raha hai
+          aur
+          waha tak pahucne k liye var ko cross karna pad raha
+           bas ye dhyan rakho ki jaha pe const ya let declare, aur jis fxn k andar hai usme direct const let nhi ayega agahr kahi v var present hai
+           kar rahe uska bracet naahi upar nahi niche kisi var ko cross kare
+          sabse pahle   ye check karo kis block pe let ya const declared hai 
+           */
+          {
+            const a = 68; // no problem, it is at same level and in diffrent block so no problem ,
+          }
+        }
+        //const a = 80;//cant same top level of var
+        {
+          const a = 50;
+        }
+      }
+      main2();
+    </script>
+  </body>
+</html>
